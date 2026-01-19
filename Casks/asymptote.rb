@@ -3,7 +3,7 @@ cask "asymptote" do
   name "asymptote"
   desc "CLI for Asymptote security platform"
   homepage "https://asymptotelabs.ai"
-  version "1.0.0"
+  version "1.1.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "asymptote" do
   on_macos do
     on_intel do
       url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v#{version}/asymptote_#{version}_darwin_amd64.tar.gz"
-      sha256 "250607d21816052681c360565e16045573f3a1642af81d6ed7e7087bfdb3dcf2"
+      sha256 "5975e289cdea5f2dfc26b810e6ae3c6dd4791669be4d8a03d483e032a8bad0da"
     end
     on_arm do
       url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v#{version}/asymptote_#{version}_darwin_arm64.tar.gz"
-      sha256 "6634e3265f2defd74de9619b3962ae43051bd66dea51c41ac2f5cb5a5839d505"
+      sha256 "a04a429c7c60a2eaf00a9f4fc5c8ad3fc00d539b389f79088d6d55979f02f211"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v#{version}/asymptote_#{version}_linux_amd64.tar.gz"
-      sha256 "7c9af2ff3265368fa89e7376cdae89e286b0e2f3c33cc7f7e2a7148b64c26575"
+      sha256 "a6ca80202ca6fe12aa6be52f23e7477771e4929d3ac90030c2508e39003fe710"
     end
     on_arm do
       url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v#{version}/asymptote_#{version}_linux_arm64.tar.gz"
-      sha256 "8cb39b7c296e46871005f462c5c7ce6faeca5d4ea5c62e5b135d1b5b26e5e3ce"
+      sha256 "bced262b536ed0eb738325dec0eb196a9382c5fa67e64de8651bdb109d70a055"
     end
   end
 
