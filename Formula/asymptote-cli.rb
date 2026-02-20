@@ -5,21 +5,21 @@
 class AsymptoteCli < Formula
   desc "CLI for Asymptote security platform"
   homepage "https://asymptotelabs.ai"
-  version "2.3.0"
+  version "2.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.3.0/asym_2.3.0_darwin_amd64.tar.gz"
-      sha256 "610be5cae05cd6de387e0a160f7cc9e961f78b3276c16d6cbd03a4cba33e80e2"
+      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.4.0/asym_2.4.0_darwin_amd64.tar.gz"
+      sha256 "06c3b119efaaf11286bbe07f0f82820f1fc09080cf06b2eca27bb6aa8adb26ff"
 
       def install
         bin.install "asym"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.3.0/asym_2.3.0_darwin_arm64.tar.gz"
-      sha256 "7d94dbeca8aa5df27df2248e13f634986f36189184b0737b45b8908c07057817"
+      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.4.0/asym_2.4.0_darwin_arm64.tar.gz"
+      sha256 "5fb5be0be7539a2c7eb50347340b3900383f4e16992baa8bcb9c1b34efd4fb05"
 
       def install
         bin.install "asym"
@@ -29,15 +29,15 @@ class AsymptoteCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.3.0/asym_2.3.0_linux_amd64.tar.gz"
-      sha256 "92a9df9e2704d7414528af5155b7b0627ed8916c1aa5ca65cd5854c1cf9e48a3"
+      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.4.0/asym_2.4.0_linux_amd64.tar.gz"
+      sha256 "a27d3ad41611477d0ebb9abd9f449c0c11bb46430d3c9a9e63477441a837262a"
       def install
         bin.install "asym"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.3.0/asym_2.3.0_linux_arm64.tar.gz"
-      sha256 "c6650ba99519f3c2ba5b89826c81f266ea46143c5439a123c9529ecf9bdec57a"
+      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.4.0/asym_2.4.0_linux_arm64.tar.gz"
+      sha256 "e8ba9c9a461ee174556eb16dbefb31cfe37a63206c55b93b9229003a77e667b8"
       def install
         bin.install "asym"
       end
