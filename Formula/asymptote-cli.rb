@@ -5,21 +5,21 @@
 class AsymptoteCli < Formula
   desc "CLI for Asymptote security platform"
   homepage "https://asymptotelabs.ai"
-  version "2.6.1"
+  version "2.6.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.6.1/asym_2.6.1_darwin_amd64.tar.gz"
-      sha256 "74d430d2aaf9d343f36da674bb3d5c215d691b2a30d46f90410d29f633d298c1"
+      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.6.2/asym_2.6.2_darwin_amd64.tar.gz"
+      sha256 "9fff2728a9e5e77296a7da6663231ef93d8d7d5e12110870bda7e3732af2740c"
 
       define_method(:install) do
         bin.install "asym"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.6.1/asym_2.6.1_darwin_arm64.tar.gz"
-      sha256 "55ede697e6c0817a4db16222f864286ddb9b3268e8f71cc19704d1162d0fe05f"
+      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.6.2/asym_2.6.2_darwin_arm64.tar.gz"
+      sha256 "a261a7eb6ed9093c052f7aa93877545bd48a87e5b96f1ee381c51d11859d2ec9"
 
       define_method(:install) do
         bin.install "asym"
@@ -29,23 +29,26 @@ class AsymptoteCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.6.1/asym_2.6.1_linux_amd64.tar.gz"
-      sha256 "368147f8e0fbf498f1e54542dadcb845ba1272de4961d44ad11bdb9376d8c647"
+      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.6.2/asym_2.6.2_linux_amd64.tar.gz"
+      sha256 "a52fe1063c66a84c503f2ff0c3b7d64cfc4a890f2b9aa54fc9476b49106b90bf"
       define_method(:install) do
         bin.install "asym"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.6.1/asym_2.6.1_linux_arm64.tar.gz"
-      sha256 "1ca49f9bffa0cfa419aafc5515e3bc31f587268312aab15586e8fb55bc9a0a86"
+      url "https://github.com/asymptote-labs/asymptote-cli/releases/download/v2.6.2/asym_2.6.2_linux_arm64.tar.gz"
+      sha256 "687af6a7480edf010afa6f683486ce5bc668e8c1d7303d846a50973e80b96461"
       define_method(:install) do
         bin.install "asym"
       end
     end
   end
 
-  def post_install
-    system "#{bin}/asym", "upgrade", "--quiet"
+  def caveats
+    <<~EOS
+      To update your agent hooks to the latest version, run:
+        asym upgrade
+    EOS
   end
 
   test do
