@@ -5,21 +5,21 @@
 class Beacon < Formula
   desc "Open-source endpoint agent for local AI runtime telemetry"
   homepage "https://asymptotelabs.ai"
-  version "0.0.1"
+  version "0.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.1/beacon_0.0.1_darwin_amd64.tar.gz"
-      sha256 "b13d5db5be73835a0faf76f597dea293f2b5dd67fc649a16de05e7dde066dbe1"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.2/beacon_0.0.2_darwin_amd64.tar.gz"
+      sha256 "5b2f624ad3829fcca0ceef18c9fb5501fbe5cbdc40b4564f6bb72a96ce9d609b"
 
       def install
         bin.install "beacon"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.1/beacon_0.0.1_darwin_arm64.tar.gz"
-      sha256 "2e4871cc63eefd6e1a34c31443b8eb7c2af08bdae396efe927a696516debe94f"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.2/beacon_0.0.2_darwin_arm64.tar.gz"
+      sha256 "4bce80e2978c6922d05b0ba839c08203a40bbb8189d6e92f4ad802c5316293b7"
 
       def install
         bin.install "beacon"
@@ -29,15 +29,15 @@ class Beacon < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.1/beacon_0.0.1_linux_amd64.tar.gz"
-      sha256 "a9146ae16513d638fc52e1ee9e5379d8a1e207f86ef838a233af888ab5f5898c"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.2/beacon_0.0.2_linux_amd64.tar.gz"
+      sha256 "f895db1efc726f3c1f9fa9857b7ffb28e409f0c7e4f1d639dc0b8a7d7edfd991"
       def install
         bin.install "beacon"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.1/beacon_0.0.1_linux_arm64.tar.gz"
-      sha256 "e432e1c5b1d535c6a37ee1ced2a42a82d5e64a516a455095262c9da8c9ce7af5"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.2/beacon_0.0.2_linux_arm64.tar.gz"
+      sha256 "b0aad0e90736788ebf101db8d32440b7589c69ede1b060af9a6dd2edea51d661"
       def install
         bin.install "beacon"
       end
@@ -47,7 +47,7 @@ class Beacon < Formula
   def caveats
     <<~EOS
       To configure local endpoint telemetry, run:
-        beacon endpoint install --user
+        beacon endpoint install
     EOS
   end
 
