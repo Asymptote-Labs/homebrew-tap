@@ -5,24 +5,24 @@
 class Beacon < Formula
   desc "Open-source endpoint agent for local AI runtime telemetry"
   homepage "https://asymptotelabs.ai"
-  version "0.0.18"
+  version "0.0.19"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.18/beacon_0.0.18_darwin_amd64.tar.gz"
-      sha256 "22398d21e0df66d565a3d50a4d985c29429541347a9080c91c5620d6b5278d35"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.19/beacon_0.0.19_darwin_amd64.tar.gz"
+      sha256 "5a5724881cbfcb1cdf69cc6e8d5ad50b3b285293fa499cb8b152efb993707e97"
 
-      define_method(:install) do
+      def install
         bin.install "beacon"
         bin.install "beacon-otelcol"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.18/beacon_0.0.18_darwin_arm64.tar.gz"
-      sha256 "d2e77b14aeeabd5db42bc8c6fd5f9c52a2201f9b5987893570063159c729cdf0"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.19/beacon_0.0.19_darwin_arm64.tar.gz"
+      sha256 "26118ae162e83a97e15a99b3c74b8053f42155e12074c05fb9a94a5d8b57d815"
 
-      define_method(:install) do
+      def install
         bin.install "beacon"
         bin.install "beacon-otelcol"
       end
@@ -31,17 +31,17 @@ class Beacon < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.18/beacon_0.0.18_linux_amd64.tar.gz"
-      sha256 "0c6bdc433e5ee6ce44649a94aa8fa6ea941fd5d9c87102bba870a319dc55e284"
-      define_method(:install) do
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.19/beacon_0.0.19_linux_amd64.tar.gz"
+      sha256 "9cd93977714587bd47710b31f5cc8f331a92968dd8bea931f70d71846ea42d30"
+      def install
         bin.install "beacon"
         bin.install "beacon-otelcol"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.18/beacon_0.0.18_linux_arm64.tar.gz"
-      sha256 "d521c502264a3851af92b3a03502d2411022e2d5ff262febf2aa9bd91bfcd170"
-      define_method(:install) do
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.19/beacon_0.0.19_linux_arm64.tar.gz"
+      sha256 "db90ad42fc2231569d78393932bd7c2fa16d227cce25a62e062c67bb6d367d7a"
+      def install
         bin.install "beacon"
         bin.install "beacon-otelcol"
       end
