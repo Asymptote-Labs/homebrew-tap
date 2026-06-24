@@ -11,7 +11,7 @@ class Beacon < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.76/beacon_0.0.76_darwin_amd64.tar.gz"
-      sha256 "abcaba95373f5edce49406698bb24b36d6892ed39fb5e646fefb575e2e1e9d69"
+      sha256 "0d6073c08d8382c560baa86e54f90e0474ade3dbda79a5f940bb8c48c8f66231"
 
       def install
         bin.install "beacon"
@@ -21,7 +21,7 @@ class Beacon < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.76/beacon_0.0.76_darwin_arm64.tar.gz"
-      sha256 "4b8486e6c786b09fe134a56ac92ee3a387ad7556b682d551ae3446f10daea40f"
+      sha256 "a1a351478397cea396bae96988e78ca6dd6a174b555287e06b7cdf3092428753"
 
       def install
         bin.install "beacon"
@@ -34,7 +34,7 @@ class Beacon < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.76/beacon_0.0.76_linux_amd64.tar.gz"
-      sha256 "cee4f9e758a53440dd107b78fdc18d24f2f18318d5eafaabf959e11306d09265"
+      sha256 "2633c275367b75f0d3b1ff786703bb7e169c7989b29e8fe13362716cc76fadf2"
       def install
         bin.install "beacon"
         bin.install "beacon-hooks"
@@ -43,7 +43,7 @@ class Beacon < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/asymptote-labs/agent-beacon/releases/download/v0.0.76/beacon_0.0.76_linux_arm64.tar.gz"
-      sha256 "cdcf006e87855a03cb53b41ac9826b9b86f93b145885fd1efd2229c19d7cee3b"
+      sha256 "eef52434b4aba15fcc31f9f047b95fde6250114adbb473cb40974aea2fe56b6a"
       def install
         bin.install "beacon"
         bin.install "beacon-hooks"
