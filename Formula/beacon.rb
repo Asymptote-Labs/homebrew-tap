@@ -8,7 +8,7 @@ class Beacon < Formula
   version "1.3.2"
   license "MIT"
 
-  depends_on "vector"
+  depends_on "asymptote-labs/tap/vector"
 
   on_macos do
     if Hardware::CPU.intel?
