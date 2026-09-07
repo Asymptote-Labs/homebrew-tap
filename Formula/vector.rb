@@ -1,7 +1,22 @@
+# Superseded by Formula/beacon-vector.rb. Nothing depends on this formula any more.
+#
+# It exists only so that machines which installed it as a dependency of beacon before the
+# rename keep a resolvable formula for the keg they already have; `brew autoremove` will
+# clear it once beacon no longer needs it. Do not depend on it again, and do not resurrect
+# the name elsewhere: Homebrew allows exactly one keg named `vector` no matter which tap it
+# came from, so beacon depending on this made `brew install/upgrade beacon` fail outright
+# for everyone who already had Vector from vectordotdev/brew:
+#
+#   Error: vector is already installed from vectordotdev/brew!
+#   Please `brew uninstall vector` first.
+#
+# beacon-vector is the same mirror under a name that cannot collide, with the binary in
+# libexec so it cannot collide on a bin/vector symlink either.
+#
 # Vector is not in homebrew-core; it ships from vectordotdev/brew, and Homebrew no longer
 # taps third-party dependencies on its own. This formula mirrors Vector's official release
-# tarballs so "brew install asymptote-labs/tap/beacon" can depend on it. Vector stopped
-# publishing macOS x86_64 builds after 0.50.0, so Intel Macs get that release.
+# tarballs. Vector stopped publishing macOS x86_64 builds after 0.50.0, so Intel Macs get
+# that release.
 class Vector < Formula
   desc "High-performance observability data pipeline (runs the optional Asymptote managed forwarder)"
   homepage "https://vector.dev"
