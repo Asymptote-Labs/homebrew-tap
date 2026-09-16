@@ -32,7 +32,9 @@ jobs:
           echo "/home/linuxbrew/.linuxbrew/sbin" >> "$GITHUB_PATH"
 
       - name: Tap local checkout
-        run: brew tap asymptote-labs/tap "$GITHUB_WORKSPACE"
+        run: |
+          brew tap asymptote-labs/tap "$GITHUB_WORKSPACE"
+          brew trust asymptote-labs/tap
 
       - name: Validate tap formula loading
         run: brew readall asymptote-labs/tap
