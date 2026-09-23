@@ -19,6 +19,9 @@ class BeaconVector < Formula
   desc "High-performance observability data pipeline for Beacon managed forwarding"
   homepage "https://vector.dev"
   license "MPL-2.0"
+  # Bumped for the move from 0.58.0 back to 0.56.0. Homebrew only upgrades to a higher version,
+  # and compares version_scheme first, so without this `brew upgrade` leaves 0.58.0 installed.
+  version_scheme 1
 
   on_macos do
     on_arm do
