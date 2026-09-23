@@ -5,17 +5,28 @@
 # tarballs so "brew install asymptote-labs/tap/beacon" can depend on it without colliding
 # with a Vector the operator already installed from vectordotdev/brew. Vector stopped
 # publishing macOS x86_64 builds after 0.50.0, so Intel Macs get that release.
-# Linux uses the current Vector archive so Homebrew's cross-platform tap validation
-# sees an active URL for every supported package index.
+#
+# Pinned to 0.56.0, the version Beacon's .pkg, .deb, and .rpm ship. Vector 0.57 stops
+# expanding ${VAR:-default} in config files and 0.58 stops expanding ${VAR} at all without
+# --dangerously-allow-env-var-interpolation, which breaks the forwarding configs Beacon
+# generates. Move past 0.56 only together with agent-beacon, whose CI checks every generated
+# config against the Vector it ships.
+#
+# Linux uses the static (musl) build, the same one Beacon's Linux packages carry. Beacon's own
+# formula does not depend on this one on Linux, but the URLs keep Homebrew's cross-platform tap
+# validation happy.
 class BeaconVector < Formula
   desc "High-performance observability data pipeline for Beacon managed forwarding"
   homepage "https://vector.dev"
   license "MPL-2.0"
+  # Bumped for the move from 0.58.0 back to 0.56.0. Homebrew only upgrades to a higher version,
+  # and compares version_scheme first, so without this `brew upgrade` leaves 0.58.0 installed.
+  version_scheme 1
 
   on_macos do
     on_arm do
-      url "https://packages.timber.io/vector/0.58.0/vector-0.58.0-arm64-apple-darwin.tar.gz"
-      sha256 "9182491597f1bdedb08d84a051616c62deea770a9d905b697712cc6526919449"
+      url "https://packages.timber.io/vector/0.56.0/vector-0.56.0-arm64-apple-darwin.tar.gz"
+      sha256 "9aa8b6772d7c887734d38c84eb721d3a067e08a4aa4dc0dcc809365da242ec16"
     end
     on_intel do
       url "https://packages.timber.io/vector/0.50.0/vector-0.50.0-x86_64-apple-darwin.tar.gz"
@@ -25,12 +36,12 @@ class BeaconVector < Formula
 
   on_linux do
     on_arm do
-      url "https://packages.timber.io/vector/0.58.0/vector-0.58.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "06d9f9768feb0cb5c7cdfc12e0b737b22f1220967f5455f391a395361b5799e5"
+      url "https://packages.timber.io/vector/0.56.0/vector-0.56.0-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "afa383a264e7ab373dac68281cd86fb808f8447bb3813c08b5b0baaae0314a05"
     end
     on_intel do
-      url "https://packages.timber.io/vector/0.58.0/vector-0.58.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a4634bea859a7ad7064ff3dd6f6ad7eb0e8dd4493cc41657d84da8dd66f09d09"
+      url "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "8c114c5e9fd9646516f014d5d837690447cf0d4f43ba4a3746713bc0612b039b"
     end
   end
 
