@@ -5,15 +5,15 @@
 class Beacon < Formula
   desc "Open-source endpoint agent for local AI runtime telemetry"
   homepage "https://asymptotelabs.ai"
-  version "1.3.30"
+  version "1.3.31"
   license "MIT"
 
   depends_on "asymptote-labs/tap/beacon-vector" if OS.mac?
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v1.3.30/beacon_1.3.30_darwin_amd64.tar.gz"
-      sha256 "78b37064e11dca1c372b7eb7de050b5069d850184d46f745facb5f4f7edf6eec"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v1.3.31/beacon_1.3.31_darwin_amd64.tar.gz"
+      sha256 "91e5459bcef38b8a65b96461e21c96f24fdbbe27a24328ab5c206db954111dd6"
 
       def install
         bin.install "beacon"
@@ -23,8 +23,8 @@ class Beacon < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v1.3.30/beacon_1.3.30_darwin_arm64.tar.gz"
-      sha256 "80565688cc28444d98904a5e345f93aa6e214afda71a9278abd59b09b5b7b74b"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v1.3.31/beacon_1.3.31_darwin_arm64.tar.gz"
+      sha256 "dea2b1dad51ff7e8fdc24b2a1b2db413b3e689fd58ed46170c10249d2fe246a4"
 
       def install
         bin.install "beacon"
@@ -37,8 +37,8 @@ class Beacon < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v1.3.30/beacon_1.3.30_linux_amd64.tar.gz"
-      sha256 "2aa6f01fbea2b9eebd79ee83a5659411809c14ca351ba80b92cde93e707e43ef"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v1.3.31/beacon_1.3.31_linux_amd64.tar.gz"
+      sha256 "c6099fe48c91d44c287e1dfa9889eb0287a246836ae4b20664041db4fac50a40"
       def install
         bin.install "beacon"
         bin.install "beacon-hooks"
@@ -47,8 +47,8 @@ class Beacon < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v1.3.30/beacon_1.3.30_linux_arm64.tar.gz"
-      sha256 "26b0427b3aa1f6015a7f3fb0037e87b6d511561c323e93ba0bfe91e6f6d653c1"
+      url "https://github.com/asymptote-labs/agent-beacon/releases/download/v1.3.31/beacon_1.3.31_linux_arm64.tar.gz"
+      sha256 "299277b3aff61ab6dd5e88b46299f9d141c601fd42dc64b48f8ace26f167846e"
       def install
         bin.install "beacon"
         bin.install "beacon-hooks"
